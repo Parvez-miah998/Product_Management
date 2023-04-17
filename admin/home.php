@@ -1,0 +1,49 @@
+<h1 class="text-dark">Welcome to my WebApplication</h1>
+<hr class="border-dark">
+<div class="row">
+         
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-boxes"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Total Items</span>
+                <span class="info-box-number">
+                  <?php 
+                     $item = $conn->query("SELECT * FROM item_list where `status` =0 ")->num_rows;
+                     echo number_format($item);
+                  ?>
+                </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+           <!-- /.col -->
+           <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-file-invoice"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Approve Products</span>
+                <span class="info-box-number">
+                  <?php 
+                     $po_appoved = $conn->query("SELECT * FROM po_list where `status` =1 ")->num_rows;
+                     echo number_format($po_appoved);
+                  ?>
+                </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <!-- /.col -->
+          
+          <!-- /.col -->
+        </div>
+<div class="container">
+  
+</div>
